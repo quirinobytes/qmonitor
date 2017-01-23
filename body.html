@@ -1,0 +1,196 @@
+<html ng-app=qMonitor>
+<head>
+<style type="text/css">
+		.jumbotron{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top:20px;
+			text-align: center;
+			padding: 10px;
+		}
+		.carteira{
+		    background:#dddddc;
+			border-size:1px;
+			border-style:solid;
+			border-color:black;
+			margin-top:20px;
+		}		
+
+		.cotacoes{
+			font-size:small;
+		}		
+		.table{ 
+			margin-top:20px;
+			background-color: light-blue;
+		}
+		.form-control{
+			margin-bottom: 4px;
+		}
+		.selecionado{
+						background-color: #55AAFF;
+		}
+	</style>
+	<title> qMonitor - Cognitive Stock Model API</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script> 
+	angular.module("qMonitor", []);
+		angular.module("qMonitor").controller("exibir-titulo",function($scope,$http){
+		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';});	
+	
+
+			// TITULO E VERSAO DO PROGRAMA #############
+			$scope.titulo = "qMonitor - unBound Commander ® v1.0"
+			$scope.data='01/01/2017';
+			$scope.cotacoes_array = [];
+			$scope.eEditable = -1;	
+			
+			$scope.comandos_array = [
+					{nome: "excluir", quantidade: "eliot", total: "10", valor:"2000", "montadora":{"nome":"Excluir Cache","valor":"8.10"}},
+					{nome: "listar", quantidade: "zautoritext1", total: "3600", valor:"1700", "montadora":{"nome":"Listar","valor":"8.10"}},
+					{nome: "uptime", quantidade: "zoom1", total: "20", valor:"1000", "montadora":{"nome":"Uptime Server","valor":"8.10"}},
+					{nome: "flush", quantidade: "pool-az", total: "30", valor:"300", "montadora":{"nome":"Flush Toda Zona","valor":"8.00"}},
+			];
+
+			
+			
+
+			$scope.robo = function (){ 
+					 	//	window.location.reload(true); 
+			    $http({
+					method: 'POST',
+					url: 'http://172.23.2.134:3000/hello',
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+					data: 'nome=13&id_cliente=27&ativo=qualquer&cor=azul&valor=1000&tamanho=1234abcd'
+					 }).success(function (response) { 
+							console.log('POST venda ... enviado => ' + 'id_corretora=13&id_clen=1234abcd');
+					});   
+							
+		    };
+
+			$scope.executa = function(obj){
+					console.log("Executa: "+obj);
+					opcao = obj.filter(function(data){
+						if (data.selecionado) return data;
+					});
+					console.log("acao:"+opcao[0].nome);
+		
+					//Fazendo a chamada da API no servidor qMonitor
+					$http.get('http://172.23.2.134:3000/api/'+opcao[0].nome).then(function(response){
+					$scope.cotacoes_array = response.data;
+					});
+
+			};
+
+			
+
+		});
+	</script>
+
+
+   <script>
+   angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
+	    load_total();
+		$interval(function(){ load_total();},2000); //Atualizar o total de nodes a cada 5 segundos.
+			function load_total(){
+				$http.get('http://172.23.2.134:3000/total').then(function(response){
+					$scope.total = response.data;
+			});
+	   };
+   });
+   </script>
+
+
+   <script>
+   angular.module('qMonitor').controller('exibir-nodes', function($scope, $http, $interval) {
+	 load_cotacoes();
+		$interval(function(){
+			load_cotacoes();
+		},5000);
+		
+			function load_cotacoes(){
+				$http.get('http://172.23.2.134:3000/listar').then(function(response){
+					$scope.nodes_array = response.data;
+			});
+	   };
+   });
+
+   </script>
+   <script>
+   </script>
+</head>	
+   </script>
+</head>
+
+<body ng-controller="exibir-titulo">
+	<div class="jumbotron jumbotron-fluid" >
+			<h3> {{titulo}} </h3>
+			<button class="btn btn-warning btn-block" ng-click="robo()"> Ativar Teste de Hello </button>
+			<div class='container'> 
+				<table magin-left='100px' class='table' ng-controller="exibir-total">
+						<td> Total de servidores {{total}} </td>
+					  	<td><span style='font-weight:bold;'> Tempo = {{tempo | date:'R$':2}} </span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class='cotacoes container' ng-controller='exibir-nodes'>
+			<h4> Servidores Disponíveis </h4>
+				<table class='table table-striped' ng-controller='exibir-nodes'>
+				<tr>
+				</tr>
+
+				<tr ng-repeat="item in nodes_array.servidores">
+				<td> <input type="checkbox"  id="{{name}}" name="favorite"> {{item}}</td>
+				</tr>
+				</table>
+			</div>
+
+			{{retornoOrdens}}
+			<div class='carteira'>
+
+	<!--			{{carteira_array}}  -->
+			   <h4> Comandos </h4><hr>
+			   <table class='table'>
+				   <tr>
+					  <th> </th>
+					  <th> Ação </th>
+					  <th> TTL </th>
+					  <th> Hostname </th>
+					  <th> Temporizador </th>
+				  </tr>
+				 <!-- so poe a classe selecionado quando veiculo.selecionado igual a true -->
+				 <tr ng-class="{selecionado: papel.selecionado }" ng-repeat="papel in comandos_array">
+				 <!-- <td ng-repeat="(key,value) in veiculos">
+				 {{ key + " - " + value}}
+				 </td> -->
+					 <td> <input type="checkbox" ng-model='papel.selecionado' /></td>
+					 <td>{{papel.montadora.nome}}</td>
+					<!-- Aqui faz outra das magicas mais lindas que ja vi no angular, para editar o valor no próprio inputbox. -->
+					<td> <input type="text" style="width: 100px;" value="{{ papel.valor }}" ng-model='papel.valor' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/> </td>
+<!--					 <td>{{papel.valor}}</td>  -->
+					 <td><input type="text" style="width: 100px;" value="{{ papel.quantidade }}" ng-model='papel.quantidade' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/> </td>
+					 <td>{{papel.total }}</td>
+<!--					 <td><button class="btn btn-primary" ng-click="edit(carteira_array)">valor</button></td>  -->
+				 </tr>
+			   </table>
+<!--				<form ng-if="carteira_array">
+		            <input type="valor" ng-model="papel.valor" class="form-control" />
+        		    <input type="quantidade" ng-model="papel.quantidade" class="form-control" />
+		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-primary"> Editar </button> 
+        		    </form> -->
+
+			</div>
+
+       <!-- <button class="btn btn-danger  btn-block" ng-click="executa(comandos_array)"> Enviar  </button> -->
+			<button class="btn btn-primary btn-block" ng-click="executa(comandos_array)"> Enviar  </button>
+			</div>
+<!--	     	<input class="form-control" type="number" min="100" max="50000000" step="100" ng-model="papel.quantidade" placeholder="Quantidade">
+	   		<input class="form-control" type="number" min="0.01" step=".01" ng-model="papel.valor" placeholder="Valor">
+	   		<input class="form-control" type="password" ng-model="papel.assinatura" placeholder="Assinatura"> 
+			<br> -->
+	</div>
+</body>
+</html>
+
