@@ -2,17 +2,22 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 // #### VARIAVEIS GLOBAIS
-global.qmonitorserverip = '172.19.2.134' ;
+global.qmonitorserverip = '172.23.2.134' ;
+global.qmonitorserverip = 'a3-zico1' ;
 global.port = 8080;
 serverport = 8080;
 logfile='/var/log/qmonitor.log';
 timeout=3000;
 
-verbose=true;
-debug=true;
 
 var app = module.exports = express();
 
+
+console.log("\n######  qMonitor Client ######\n");
+
+
+
+//Abrindo a porta da aplicação Client
 app.listen(port);
 
 //Configurar o uso do body-parser para receber URL encoded

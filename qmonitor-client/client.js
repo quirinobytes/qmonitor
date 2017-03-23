@@ -7,23 +7,38 @@ var request = require('request');
 var sys = require('util');
 var exec = require('child_process').exec;
 var fs = require('fs');
-
 var connection_error_count = 0;
+
+var argv = require('yargs')
+    .usage('Usage: $0 -v [str] -d [str]')
+    .demandOption(['v','d'])
+	.alias('v', 'verbose')
+	.alias('d', 'debug')
+	.default({v:false,d:false})
+    .argv;
+
+if (argv.d) { global.debug = true; } 
+else { global.debug = false; }
+
+if (argv.v) { global.verbose = true; }
+else { global.verbose = false ; }
+
+
 
 //Iniciando o client
 console.log("qMonitor client: Iniciado..... OK");
+console.log("Verbose = "+global.verbose);
+console.log("Debug = "+global.debug);
 
 
 //	API  //
 //####################################### LISTAR NODES ###############
 app.get ('/listar' ,function (req,res) {
 function puts(error, stdout, stderr){ sys.puts(stdout); }
-//var saida =	exec("ls -la", puts);
-//
-exec("ls -la", function(err,stdout,stderr){
-	console.log(stdout);
-	res.write(stdout);
-	res.end();
+	exec("ls -la", function(err,stdout,stderr){
+		if(debug) console.log(stdout);
+		res.write(stdout);
+		res.end();
 	});
 
 //#res.write("executei o comando");
@@ -36,21 +51,20 @@ exec("ls -la", function(err,stdout,stderr){
 app.get ('/uptime' ,function (req,res) {
 function puts(error, stdout, stderr){ sys.puts(stdout); }
 	exec("uptimee", function(err,stdout,stderr){
-	console.log(stdout);
-	if (stderr) {
-		console.log("saida de erro="+stderr);
-		res.status(500);
-		res.write(stdout+" no servidor"+os.hostname());
-		res.end();
-	}
-	else{
-		console.log(os.hostname()+"comando executado com sucesso: uptime");
-		res.status(200);
-		res.write(" Sucesso no servidor"+os.hostname());
-		res.end();
+		if(debug) console.log(stdout);
+	    if (stderr) {
+		   if (debug) console.log("saida de erro="+stderr);
+		   res.status(500);
+		   res.write(stdout+" node: "+os.hostname());
+		   res.end();
+	    }
+	    else{
+		   if (debug) console.log(os.hostname()+"comando executado com sucesso: uptime");
+		   res.status(200);
+		   res.write(" Sucesso no servidor"+os.hostname());
+		   res.end();
 
-	}
-		
+		}
 	});
 //res.write(stdout);
 });
@@ -60,7 +74,7 @@ function puts(error, stdout, stderr){ sys.puts(stdout); }
 app.get ('/x/uptime' ,function (req,res) {
 		res.write(""+aliveNodes.length);
 		res.end();
-		console.log(aliveNodes.length);
+		if (debug) console.log(aliveNodes.length);
 
 });
 
@@ -68,7 +82,7 @@ app.get ('/x/uptime' ,function (req,res) {
 app.get ('/ping' ,function (req,res) {
 		res.write("alive");
 		res.end();
-		console.log("REPLY PING");
+		if (debug) console.log("REPLY PING");
 });
 
 
@@ -104,7 +118,7 @@ function hello () {
 		}
 		else {
 			connection_error_count++;
-			if (verbose) console.log("#VERBOSE# Servidor indisponível #:"+connection_error_count+" Retentando em instantes");
+			if (debug) console.log("#ERROR# Servidor indisponível #:"+connection_error_count+" Retentando em instantes");
 		}
 	}
 	return true;
