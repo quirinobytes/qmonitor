@@ -1,0 +1,49 @@
+[2017-03-22 12:07:17.836] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:07:17.841] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:07:18.949] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:07:18.950] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:07:22.872] [INFO] qmonitor - Comando : uptimea
+[2017-03-22 12:07:22.873] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:07:27.155] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:07:27.155] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:07:37.804] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:07:37.809] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:07:40.705] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:07:40.705] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:08:25.014] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:08:25.014] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:08:25.071] [ERROR] qmonitor - Erro ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:08:34.321] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:08:34.321] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:08:34.347] [INFO] qmonitor - COMMAND Executed OK => 10.130.161.8 
+[2017-03-22 12:12:16.213] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:12:16.218] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:12:16.258] [INFO] qmonitor - COMMAND Executed OK => 10.130.161.8 
+[2017-03-22 12:12:20.203] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:12:20.203] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:12:20.221] [INFO] qmonitor - COMMAND Executed OK => 10.130.161.8 
+[2017-03-22 12:12:25.534] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:12:25.534] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:12:25.546] [ERROR] qmonitor - Erro ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:13:40.225] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:13:40.230] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:13:40.271] [ERROR] qmonitor - Error 500: ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:13:47.689] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:13:47.690] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:13:47.704] [ERROR] qmonitor - Error 500: ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:13:52.431] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:13:52.431] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:13:52.445] [ERROR] qmonitor - Error 500: ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:13:54.143] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:13:54.144] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:13:54.152] [ERROR] qmonitor - Error 500: ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:21:50.829] [INFO] qmonitor - Comando : uptime
+[2017-03-22 12:21:50.834] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:21:50.858] [ERROR] qmonitor - Error 500: ao executar o comando http://10.130.161.8:8080/uptime no servidor:  node: a3-zico2
+[2017-03-22 12:22:09.469] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:22:09.469] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:22:09.485] [INFO] qmonitor - COMMAND Executed OK => 10.130.161.8 
+[2017-03-22 12:23:18.732] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:23:18.732] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-22 12:23:47.184] [INFO] qmonitor - Comando : listar
+[2017-03-22 12:23:47.189] [INFO] qmonitor - Enviando a chamada para os nos
