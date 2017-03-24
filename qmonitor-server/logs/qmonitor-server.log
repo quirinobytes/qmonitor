@@ -47,3 +47,33 @@
 [2017-03-22 12:23:18.732] [INFO] qmonitor - Enviando a chamada para os nos
 [2017-03-22 12:23:47.184] [INFO] qmonitor - Comando : listar
 [2017-03-22 12:23:47.189] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:43:42.873] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:43:42.882] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:43:42.932] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:43:58.623] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:43:58.623] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:43:58.654] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:46:43.940] [INFO] qmonitor - Comando : uptime
+[2017-03-24 00:46:43.945] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:43.963] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 00:46:46.751] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:46:46.754] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:46.771] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:46:49.946] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:46:49.946] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:49.962] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:46:50.656] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:46:50.656] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:50.679] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:46:51.232] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:46:51.233] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:51.247] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 00:46:55.682] [INFO] qmonitor - Comando : uptime
+[2017-03-24 00:46:55.683] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:46:55.696] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 00:47:30.313] [INFO] qmonitor - Comando : uptime
+[2017-03-24 00:47:30.314] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:47:30.326] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 00:47:43.884] [INFO] qmonitor - Comando : listar
+[2017-03-24 00:47:43.884] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 00:47:43.902] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 

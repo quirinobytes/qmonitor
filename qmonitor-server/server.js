@@ -57,7 +57,7 @@ app.post ('/hello', function (req,res) {
 		}
 
 	if (verbose) {
-	console.log ("HELLO CLIENT: " + ip);
+	console.log ("#VERBOSE# HELLO CLIENT: " + ip);
 	}
 
 	//aliveNodes.push(ip);
