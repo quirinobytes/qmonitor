@@ -11,10 +11,12 @@ var connection_error_count = 0;
 
 var argv = require('yargs')
     .usage('Usage: $0 -v [str] -d [str]')
-    .demandOption(['v','d'])
+    .demandOption(['v','d','s'])
 	.alias('v', 'verbose')
 	.alias('d', 'debug')
-	.default({v:false,d:false})
+	.alias('s', 'server')
+	.alias('p', 'port')
+	.default({v:false,d:false,s:false})
     .argv;
 
 if (argv.d) { global.debug = true; } 
@@ -23,12 +25,23 @@ else { global.debug = false; }
 if (argv.v) { global.verbose = true; }
 else { global.verbose = false ; }
 
+if (argv.s) { server = argv.s; }
+else {global.server = false};
+
+if (argv.p) { global.port = argv.p; }
+else {global.port = false};
+
+
+if (server) { qmonitorserverip = global.server }
+if (port) { serverport = global.port }
 
 
 //Iniciando o client
 console.log("qMonitor client: Iniciado..... OK");
 console.log("Verbose = "+global.verbose);
 console.log("Debug = "+global.debug);
+console.log("Server= "+qmonitorserverip);
+console.log("Port = "+serverport);
 
 
 //	API  //
