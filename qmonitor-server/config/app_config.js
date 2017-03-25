@@ -32,7 +32,7 @@ else{ global.verbose = false;}
 
 
 // #### VARIAVEIS GLOBAIS
-global.qmonitorserverip = 'a3-zico1' ;
+global.qmonitorserverip = '189.55.194.115' ;
 global.port = 8080;
 
 var app = module.exports = express();
