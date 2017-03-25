@@ -66,7 +66,19 @@ app.get ('/listar' ,function (req,res) {
 app.get ('/total' ,function (req,res) {
 		res.write(""+aliveNodes.length);
 		res.end();
-if (debug) { console.log(aliveNodes.length); }
+		var ip = req.connection.remoteAddress;
+
+		if (ip.length < 15) 
+			{   
+			    ip = ip;
+			}
+		else
+		{
+		    var nyIP = ip.slice(7);
+		    ip = nyIP;
+		}
+
+if (debug) { console.log("#DEBUG# CLIENT ("+ip+") REQUEST API: /total | Resp => "+aliveNodes.length); }
 });
 
 
@@ -108,9 +120,13 @@ app.post ('/cadastrar', function (req,res) {
 });
 
 
-app.get ('/api/:nome', function(req,res){
+app.get ('/api/:nome/:parametro', function(req,res){
 	var metodo = req.params.nome;
+	var parametro = req.params.parametro;
 	var i;
+
+	// NAO ESQUECER DE TRATAR AS FUNCOES POSSIVEIS... SENAO MANDA TUDO
+
 
 //	productController.delete(id, function(resp){
 //		res.json(resp);
@@ -119,10 +135,13 @@ app.get ('/api/:nome', function(req,res){
 	logger.info('Enviando a chamada para os nos');
 
 	for (i = 0 ; i < aliveNodes.length ; i++){
-		url = 'http://'+aliveNodes[i]+':8080'+'/'+metodo;
+		url = 'http://'+aliveNodes[i]+':8080'+'/'+metodo+'/'+parametro;
 		console.log("URL="+url);
 		request(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
+					//devolvendo o retorno
+					res.write(response.body);
+					res.end();
 				    logger.info("COMMAND Executed OK => %s ",response.request.host) // Show the HTML for the Google homepage.
 					if (verbose) { console.log(body); }
 						//console.log(body.toString());
@@ -139,7 +158,6 @@ app.get ('/api/:nome', function(req,res){
 	}
 
 
-	res.end();
 });
 
 //funcao que faz o registro de aliveNodes.
