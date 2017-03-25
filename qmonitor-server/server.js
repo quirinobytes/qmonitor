@@ -85,41 +85,18 @@ if (debug) { console.log("#DEBUG# CLIENT ("+ip+") REQUEST API: /total | Resp => 
 
 app.post ('/hello', function (req,res) {
 	var nome = req.body.nome;
-	var tamanho = req.body.tamanho;
-	var cor = req.body.cor;
-	var valor = req.body.valor;
-
+	var token = req.body.token;
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		if (ip.substr(0, 7) == "::ffff:") {
 		  ip = ip.substr(7)
 		}
 
-	if (verbose) {
-	console.log ("#VERBOSE# HELLO CLIENT: " + ip);
-	}
-
-	//aliveNodes.push(ip);
+	if (verbose) {	console.log ("#VERBOSE# HELLO CLIENT: adding(" + ip+")");	}
 	registerNode(ip);
 	res.json({cadastro:true});
 });
 
-
-
-app.post ('/cadastrar', function (req,res) {
-	var nome = req.body.nome;
-	var tamanho = req.body.tamanho;
-	var cor = req.body.cor;
-	var valor = req.body.valor;
-
-	productController.save(nome,tamanho,cor,valor,function(resp){
-		res.json(resp);
-	});
-
-	fs.writeFile(nodesFile,req.connection.remoteAddress);
-
-});
-
-
+// FUNCAO PRINCIPAL PARA ENVIO DAS CHAMADAS API AOS NOS
 app.get ('/api/:nome/:parametro', function(req,res){
 	var metodo = req.params.nome;
 	var parametro = req.params.parametro;
@@ -127,12 +104,8 @@ app.get ('/api/:nome/:parametro', function(req,res){
 
 	// NAO ESQUECER DE TRATAR AS FUNCOES POSSIVEIS... SENAO MANDA TUDO
 
-
-//	productController.delete(id, function(resp){
-//		res.json(resp);
-//	});
-	logger.info('Comando : %s',metodo);
-	logger.info('Enviando a chamada para os nos');
+	logger.info('Comando enviado: %s',metodo);
+	logger.info('Enviando a chamada para os nos '+ JSON.stringify(aliveNodes));
 
 	for (i = 0 ; i < aliveNodes.length ; i++){
 		url = 'http://'+aliveNodes[i]+':8080'+'/'+metodo+'/'+parametro;

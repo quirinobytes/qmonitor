@@ -9,7 +9,7 @@
 			text-align: center;
 			padding: 10px;
 		}
-		.quadro{
+		.painel{
 		    background:#dddddc;
 			border-size:1px;
 			border-style:solid;
@@ -19,14 +19,17 @@
 		}		
 
 		.logboard{
-			float: right;
+			margin-top:20px;
+			margin-right:20px;
+			border-size:1px;
 			width: 250px;
 			height: 500px;
 		    background:#dddddc;
-			margin-right:20px;
 			position: absolute;
 		    top: 20;
 		    right: 40;
+			float: right;
+		    overflow: scroll;
 		}
 
 		.cotacoes{
@@ -47,42 +50,39 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script> 
+
+
 	angular.module("qMonitor", []);
-		angular.module("qMonitor").controller("exibir-titulo",function($scope,$http){
-		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';});	
-	
+	angular.module("qMonitor").controller("unbound",function($scope,$http){
+	angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';});
 
-			// TITULO E VERSAO DO PROGRAMA #############
-
-			//DECLARACAO DE VARIAVEIS
-			$scope.titulo = "qMonitor - unBound Commander ® v1.0"
-			$scope.data='01/01/2017';
-			$scope.cotacoes_array = [];
-			$scope.eEditable = -1;	
-			$scope.logarray = [];
-			
-
-			$scope.flushzone = function(obj){
-					console.log("Executando flushzone("+obj+")");
-					console.log("FQDN = "+obj);
+	// TITULO E VERSAO DO PROGRAMA #############
+	//DECLARACAO DE VARIAVEIS
+	$scope.titulo = "qMonitor - unBound Commander ® v1.0"
+	$scope.data='01/01/2017';
+	$scope.cotacoes_array = [];
+	$scope.eEditable = -1;	
+	$scope.logarray = [];
 		
-					//Fazendo a chamada da API no servidor qMonitor
-					$http.get('./api/flushzone/'+obj).then(function(response){
-					$scope.retornoComandos = response.data;
-					$scope.logarray.push(response.data);
-					console.log(response.data);
-					console.log($scope.logarray);
-					});
-					$scope.retornoComandos = "Executando... ";
-			};
+	$scope.flushzone = function(obj){
+		console.log("Executando flushzone("+obj+")");
+		console.log("FQDN = "+obj);
+
+		//Fazendo a chamada da API no servidor qMonitor
+		$http.get('./api/flushzone/'+obj).then(function(response){
+			$scope.retornoComandos = response.data;
+			$scope.logarray.push(response.data);
+			console.log(response.data);
+			console.log($scope.logarray);
+			});
+		$scope.retornoComandos = "Executando... ";
+	};
 
 			
 
-		});
-	</script>
+	});
 
 
-   <script>
    angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
 	    load_total();
 		$interval(function(){ load_total();},2000); //Atualizar o total de nodes a cada 5 segundos.
@@ -120,7 +120,7 @@
    </script>
 </head>
 
-<body ng-controller="exibir-titulo">
+<body ng-controller="unbound">
 	<div class="jumbotron jumbotron-fluid" >
 			<h3> {{titulo}} </h3>
 			<button class="btn btn-success btn-block" ng-click="robo()"> Ativar Teste de Hello </button>
@@ -134,7 +134,7 @@
 	
 
 			<div class='cotacoes container' ng-controller='exibir-nodes'>
-			<h4> Servidores Disponíveis </h4>
+			<h4> Servidores de Unbound Conectados</h4>
 				<table class='table table-striped' ng-controller='exibir-nodes'>
 				<tr>
 				</tr>
@@ -173,7 +173,7 @@
 	</div>
 
 	<div class='jumbotron logboard'>
-		<div ng-repeat='log in logarray track by $index'>
+		<div ng-repeat='log in logarray track by $index '>
 			{{log}}
 		</div>
 	</div>
