@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+//#################################################################################################################
+// qMonitor - unbound Commander
+// @author Rafael Castro
+// @date 2017-03-24 
+//#################################################################################################################
+
+
 var app = require('./config/app_config');
 //var db = require('./config/db_config.js');
 var product = require('./models/product');
@@ -9,13 +16,32 @@ var request = require('request');
 var fs= require('fs');
 var nodesFile= 'nodes.txt';
 var body="";
-fs.writeFile(nodesFile,'');
 var txt;
+var argv = require('yargs')
+    .usage('Usage: $0 -v [str] -d [str]')
+    .demandOption(['v','d','s'])
+    .alias('v', 'verbose')
+    .alias('d', 'debug')
+    .alias('s', 'server')
+    .alias('p', 'port')
+    .default({v:false,d:false,s:false})
+    .argv;
 
+//########################################################## SERVER ################################################
+
+if (argv.s) { qmonitorserverip = argv.s; }
+if (argv.p) { port = argv.p; }
 
 console.log("\n######  qMonitor Server ######\n");
 console.log(" Debug = "+debug);
 console.log(" Verbose = "+verbose);
+console.log("Server= "+qmonitorserverip);
+console.log("Port = "+port);
+
+
+
+//Zerando o arquivo de nodes/// Parece que isso nao sera mais necessário, tentar excluir na proxima versão.
+fs.writeFile(nodesFile,'');
 
 
 var aliveNodes = [];
@@ -98,14 +124,14 @@ app.get ('/api/:nome', function(req,res){
 		request(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
 				    logger.info("COMMAND Executed OK => %s ",response.request.host) // Show the HTML for the Google homepage.
-					if (debug) { console.log(body); }
+					if (verbose) { console.log(body); }
 						//console.log(body.toString());
 						//console.log(JSON.stringify(body, null, 3));
 				  }
-				if (response.statusCode == 500) {
+				if (response && response.statusCode == 500) {
 					logger.error("Error 500: ao executar o comando %s no servidor: %s",url,response.body);
 			          }
-				if (response.statusCode != 200) {
+				if (response && response.statusCode != 200) {
 					console.log("Ocorreu algum erro, diferente de 500, Error Code="+response.statusCode);
 				}
 		})

@@ -77,3 +77,376 @@
 [2017-03-24 00:47:43.884] [INFO] qmonitor - Comando : listar
 [2017-03-24 00:47:43.884] [INFO] qmonitor - Enviando a chamada para os nos
 [2017-03-24 00:47:43.902] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:14:47.040] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:14:47.049] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:14:47.087] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:23:17.757] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:23:17.765] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:23:17.819] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:26:55.223] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:26:55.232] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:26:55.295] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:26:59.132] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:26:59.135] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:26:59.159] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:00.805] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:00.805] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:00.822] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:01.324] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:01.325] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:01.344] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:01.783] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:01.783] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:01.801] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:01.953] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:01.954] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:01.970] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:02.117] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:02.118] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:02.132] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:02.460] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:02.463] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:02.477] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:02.646] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:02.646] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:02.660] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:02.972] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:02.972] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:02.985] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:03.150] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:03.150] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:03.169] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:05.929] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:05.935] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:05.949] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:07.662] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:07.663] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:07.674] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:08.303] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:08.303] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:08.315] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:08.463] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:08.464] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:08.477] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:08.963] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:08.964] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:09.014] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:09.269] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:09.270] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:09.289] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:09.605] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:09.605] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:09.617] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:09.917] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:09.918] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:09.929] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:10.090] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:10.091] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:10.101] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:10.284] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:10.285] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:10.294] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:10.590] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:10.591] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:10.603] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:26.024] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:26.025] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:26.039] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:27.341] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:27.342] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:27.356] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:28.246] [INFO] qmonitor - Comando : uptime
+[2017-03-24 01:27:28.247] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:28.261] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 01:27:30.948] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:30.949] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:30.967] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:32.453] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:32.453] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:32.475] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:34.253] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:34.254] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:34.269] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:35.339] [INFO] qmonitor - Comando : listar
+[2017-03-24 01:27:35.340] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:35.355] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 01:27:38.711] [INFO] qmonitor - Comando : excluir
+[2017-03-24 01:27:38.712] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 01:27:41.607] [INFO] qmonitor - Comando : excluir
+[2017-03-24 01:27:41.608] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:28.016] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:28.024] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:28.053] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:30.102] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:30.102] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:30.121] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:31.198] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:31.198] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:31.214] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:31.894] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:31.895] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:31.921] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:32.510] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:32.510] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:32.526] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:33.406] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:33.406] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:33.423] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:08:34.806] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:08:34.807] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:08:34.822] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:09:29.952] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:09:29.961] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:09:30.015] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:09:33.031] [INFO] qmonitor - Comando : listar
+[2017-03-24 11:09:33.031] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:09:33.061] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 11:09:38.279] [INFO] qmonitor - Comando : uptime
+[2017-03-24 11:09:38.280] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 11:09:38.296] [ERROR] qmonitor - Error 500: ao executar o comando http://192.168.200.102:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 18:05:20.030] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:05:20.039] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:05:20.075] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:05:22.635] [INFO] qmonitor - Comando : uptime
+[2017-03-24 18:05:22.636] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:05:22.650] [ERROR] qmonitor - Error 500: ao executar o comando http://200.221.153.4:8080/uptime no servidor:  node: dev2.intranet
+[2017-03-24 18:13:44.351] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:44.359] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:44.422] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:46.276] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:46.277] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:46.318] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:46.732] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:46.733] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:46.749] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:46.901] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:46.902] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:46.918] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.069] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.069] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.086] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.216] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.216] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.232] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.374] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.375] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.391] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.525] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.527] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.544] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.685] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.686] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.702] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.836] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.837] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:47.858] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:47.997] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:47.997] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.014] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.149] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.149] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.164] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.317] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.317] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.331] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.469] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.469] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.486] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.628] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.629] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.649] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.781] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.781] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.797] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:48.933] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:48.933] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:48.948] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.101] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.102] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.118] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.260] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.261] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.275] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.421] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.421] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.442] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.573] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.573] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.589] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.741] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.742] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.757] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:49.909] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:49.910] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:49.927] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:50.085] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:50.086] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:50.107] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:13:50.230] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:13:50.230] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:13:50.245] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 18:17:29.123] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:17:29.132] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 18:17:33.842] [INFO] qmonitor - Comando : listar
+[2017-03-24 18:17:33.843] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:10:38.863] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:10:38.873] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:10:38.937] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:10:49.051] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:10:49.052] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:10:49.089] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:10:50.875] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:10:50.875] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:10:50.895] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:10:53.708] [INFO] qmonitor - Comando : uptime
+[2017-03-24 19:10:53.708] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:10:53.784] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:48.710] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:48.719] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:48.788] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:51.370] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:51.372] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:51.398] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:51.970] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:51.970] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.000] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.158] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.159] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.186] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.309] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.310] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.339] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.430] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.431] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.460] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.554] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.554] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.577] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.680] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.682] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.710] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.816] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.817] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.838] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:52.937] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:52.938] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:52.948] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:53.066] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:53.068] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:53.088] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:11:53.172] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:11:53.173] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:11:53.198] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:02.172] [INFO] qmonitor - Comando : uptime
+[2017-03-24 19:12:02.173] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:02.242] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:34.852] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:34.853] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:34.874] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:36.084] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:36.084] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:36.104] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:36.499] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:36.500] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:36.516] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:36.691] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:36.692] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:36.711] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:36.852] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:36.852] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:36.871] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:36.996] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:36.996] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:37.013] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:37.868] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:37.868] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:37.887] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.052] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.052] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.071] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.212] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.213] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.230] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.380] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.381] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.401] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.548] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.548] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.562] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.691] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.692] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.711] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:38.860] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:38.860] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:38.878] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.020] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.021] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.040] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.163] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.164] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.178] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.283] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.283] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.299] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.427] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.428] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.442] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.579] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.579] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.594] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:39.731] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:39.732] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:39.754] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:40.195] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:40.196] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:40.223] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:41.811] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:41.812] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:41.826] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:41.979] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:41.980] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:41.996] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:42.133] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:42.133] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:42.149] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:42.299] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:42.301] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:42.315] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:42.741] [INFO] qmonitor - Comando : listar
+[2017-03-24 19:12:42.741] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:42.755] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-24 19:12:56.868] [INFO] qmonitor - Comando : uptime
+[2017-03-24 19:12:56.868] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-24 19:12:56.943] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-25 02:22:54.163] [INFO] qmonitor - Comando : flush
+[2017-03-25 02:22:54.170] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:23:00.774] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:23:00.775] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:23:00.799] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-25 02:24:18.633] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:24:18.634] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:24:18.652] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-25 02:24:21.187] [INFO] qmonitor - Comando : uptime
+[2017-03-25 02:24:21.187] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:24:21.258] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-25 02:24:24.994] [INFO] qmonitor - Comando : flush
+[2017-03-25 02:24:24.995] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:24:31.431] [INFO] qmonitor - Comando : excluir
+[2017-03-25 02:24:31.433] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:24:49.105] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:24:49.106] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:26:24.465] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:26:24.473] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:27:11.566] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:27:11.574] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:27:11.644] [INFO] qmonitor - COMMAND Executed OK => 192.168.200.102 
+[2017-03-25 02:27:16.333] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:27:16.333] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:27:56.111] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:27:56.120] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:28:00.472] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:28:00.472] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:28:10.439] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:28:10.439] [INFO] qmonitor - Enviando a chamada para os nos
+[2017-03-25 02:28:14.912] [INFO] qmonitor - Comando : listar
+[2017-03-25 02:28:14.914] [INFO] qmonitor - Enviando a chamada para os nos
