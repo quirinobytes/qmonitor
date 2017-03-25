@@ -9,6 +9,15 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var connection_error_count = 0;
 
+
+//###############
+//#             #
+//#	  CLIENT    #
+//#	            #
+//###############
+
+
+
 var argv = require('yargs')
     .usage('Usage: $0 -v [str] -d [str]')
     .demandOption(['v','d','s'])
@@ -46,11 +55,25 @@ console.log("Port = "+serverport);
 
 //	API  //
 //####################################### LISTAR NODES ###############
-app.get ('/listar' ,function (req,res) {
-function puts(error, stdout, stderr){ sys.puts(stdout); }
-	exec("ls -la", function(err,stdout,stderr){
-		if(debug) console.log(stdout);
-		res.write(stdout);
+app.get ('/flushzone/:fqdn' ,function (req,res) {
+
+	var fqdn = req.params.fqdn
+	fqdn = fqdn.replace(/[;$`]/gi,"");
+
+	if (fqdn === undefined ){
+	exit ;
+	}
+
+	if(debug) console.log("fqdn= "+fqdn);
+	function puts(error, stdout, stderr){
+		sys.puts(stdout);
+	}
+	exec("unbound-control flush "+fqdn, function(err,stdout,stderr){
+		if(debug) { 
+			console.log(stdout);
+			console.log("#DEBUG# Comando executado: "+ "unbound-control flush "+fqdn);
+		}
+		res.write(os.hostname()+': '+stdout);
 		res.end();
 	});
 
@@ -61,9 +84,11 @@ function puts(error, stdout, stderr){ sys.puts(stdout); }
 
 
 //########### UPTIME NODES ###############
-app.get ('/uptime' ,function (req,res) {
-function puts(error, stdout, stderr){ sys.puts(stdout); }
-	exec("uptimee", function(err,stdout,stderr){
+app.get ('/flushhost/:fqdn' ,function (req,res) {
+
+	var fqdn = req.params.fqdn
+	function puts(error, stdout, stderr){ sys.puts(stdout); }
+	exec("unbound-control flush gibati.com.br", function(err,stdout,stderr){
 		if(debug) console.log(stdout);
 	    if (stderr) {
 		   if (debug) console.log("saida de erro="+stderr);
@@ -72,7 +97,7 @@ function puts(error, stdout, stderr){ sys.puts(stdout); }
 		   res.end();
 	    }
 	    else{
-		   if (debug) console.log(os.hostname()+"comando executado com sucesso: uptime");
+		   if (debug) console.log(os.hostname()+"comando executado com sucesso: "+"unbound-control flush HOST");
 		   res.status(200);
 		   res.write(" Sucesso no servidor"+os.hostname());
 		   res.end();
