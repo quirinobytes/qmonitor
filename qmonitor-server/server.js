@@ -54,10 +54,13 @@ console.log("Timeout = "+timeout);
 //############################ HOME PAGE ######################
 app.get ('/',function (req,res) {
 	fs.readFile('body.html','utf8',function(err,body){
-		console.log('%s',body.toString());
 		res.write(body);
 	res.end('</html>');
-	if (verbose) { console.log ("#VERBOSE# CLIENT ("+req.connection.remoteaddress+") GET /") }; 
+	if (verbose) { console.log ("#VERBOSE# CLIENT ("+req.connection.remoteaddress+") GET /") 
+		
+		//Monstrar o conteudo do arquivo body.html na tela
+		//console.log('%s',body.toString());
+}; 
 	});
 
 });
