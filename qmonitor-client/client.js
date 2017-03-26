@@ -25,20 +25,21 @@ var argv = require('yargs')
 	.alias('d', 'debug')
 	.alias('s', 'server')
 	.alias('p', 'port')
+	.alias('t', 'timeout')
+	
 	.default({v:false,d:false,s:false})
     .argv;
 
-if (argv.d) { global.debug = true; } 
+if (argv.d) { global.debug = true; }
 else { global.debug = false; }
-
 if (argv.v) { global.verbose = true; }
 else { global.verbose = false ; }
-
 if (argv.s) { server = argv.s; }
 else {global.server = false};
-
 if (argv.p) { global.port = argv.p; }
 else {global.port = false};
+if (argv.t) { global.timeout = argv.t*1000; }
+else {global.timeout = false};
 
 
 if (server) { qmonitorserverip = global.server }
@@ -75,6 +76,8 @@ app.get ('/flushzone/:fqdn' ,function (req,res) {
 		}
 		res.write(os.hostname()+': '+stdout);
 		res.end();
+		var log = {hostame:os.hostname(),logstring:stdout,time:date()};
+		envialog(log);
 	});
 
 //#res.write("executei o comando");
@@ -91,17 +94,17 @@ app.get ('/flushhost/:fqdn' ,function (req,res) {
 	exec("unbound-control flush gibati.com.br", function(err,stdout,stderr){
 		if(debug) console.log(stdout);
 	    if (stderr) {
-		   if (debug) console.log("saida de erro="+stderr);
+		   if (debug) console.log("#DEBUG# Erro: Saida de erro => "+stderr);
 		   res.status(500);
 		   res.write(stdout+" node: "+os.hostname());
 		   res.end();
 	    }
 	    else{
-		   if (debug) console.log(os.hostname()+"comando executado com sucesso: "+"unbound-control flush HOST");
-		   res.status(200);
-		   res.write(" Sucesso no servidor"+os.hostname());
-		   res.end();
-
+		    if (debug) {  console.log(os.hostname()+"#DEBUG# Flush Zone executado com sucesso: "+"unbound-control flush HOST => "+stdout);  }
+			//EXECUTADO COM SUCESSO
+			res.status(200);
+			res.write(" Sucesso no servidor"+os.hostname());
+		   	res.end();
 		}
 	});
 //res.write(stdout);
@@ -164,6 +167,36 @@ function hello () {
 }
 
 
+//####################################### HELLO() ###############
+function envialog (log) {
+	var options = {
+		method: 'POST',
+		url: 'http://'+qmonitorserverip+':'+serverport+'/setlogboard',
+	    headers: {
+				'postman-token': '0c17b7e5-ee61-6514-60af-a7384edb97dc',
+			  	'cache-control': 'no-cache',
+		      	'content-type': 'application/x-www-form-urlencoded'
+				},
+		form:{
+				hostname: log.hostname,
+				logstring: log.logstring,
+				time: log.time,
+				token: '1234abcd'
+			 }
+	    };
+
+    req = request(options, function (error, response, body) {
+        if (error) {
+				if (debug) console.log("#DEBUG# Error in envialog(log) => Erro de conexao ao servidor: "+qmonitorserverip+":"+serverport);
+				return false;
+			}
+			else {
+				if (debug) console.log("#DEBUG# Success: log sent with success! => "+body+"  | SERVER RESPONSE => " + response.body );
+				return true;
+			}
+		});
+}
+
 
 
 //final do programa, mas nao para, fica em loop infinito chamando hello.
@@ -178,4 +211,4 @@ setInterval(function () {
 	if (verbose) { console.log('#VERSOSE# HELLO SERVER: '+qmonitorserverip); }
 	hello()	
 
-}, timeout); //Intervalo de 30 segundos para o HELLO 
+}, global.timeout); //Intervalo de 30 segundos para o HELLO 
