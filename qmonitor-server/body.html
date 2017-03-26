@@ -48,56 +48,74 @@ t
 		}
 	</style>
 	<title> Unbound Admin Portal </title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script> 
 
-
 	angular.module("qMonitor", []);
-	angular.module("qMonitor").controller("unbound",function($scope,$http){
-//	angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
+	angular.module("qMonitor").controller("unbound",function($scope,$http,$interval){
+		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
 
-	// TITULO E VERSAO DO PROGRAMA #############
-	//DECLARACAO DE VARIAVEIS
-	$scope.titulo = "Unbound Admin's Portal - v1.0"
-	$scope.data='01/01/2017';
-	$scope.cotacoes_array = [];
-	$scope.eEditable = -1;	
-	$scope.logarray = [];
+		// TITULO E VERSAO DO PROGRAMA #############
+		//DECLARACAO DE VARIAVEIS
+		$scope.titulo = "Unbound Admin's Portal - v1.0"
+		$scope.data='01/01/2017';
+		$scope.cotacoes_array = [];
+		$scope.eEditable = -1;	
+		$scope.logarray = [];
 
-	// FUNCAO flushzone( recebe um obj nome de dominio )		
-	$scope.flushzone = function(obj){
-		console.log("Executando flushzone("+obj+")");
-		console.log("FQDN = "+obj);
-
-		//Fazendo a chamada da API no servidor qMonitor
-		$http.get('./api/flushzone/'+obj).then(function(response){
-			$scope.retornoComandos = response.data;
-			$scope.logarray.push(response.data);
-			console.log(response.data);
-			console.log($scope.logarray);
-			});
-		$scope.retornoComandos = "Executando... ";
-	};
-
+		// FUNCAO flushzone( recebe um obj nome de dominio )		
+		$scope.flushzone = function(obj){
+			console.log("Executando flushzone("+obj+")");
+			console.log("FQDN = "+obj);
+	
+			//Fazendo a chamada da API no servidor qMonitor
+			$http.get('./api/flushzone/'+obj).then(function(response){
+				$scope.retornoComandos = response.data;
+				$scope.logarray.push(response.data);
+				console.log(response.data);
+				console.log($scope.logarray);
+				});
 			
+			load_logboard();
+			$scope.retornoComandos = "Executando... ";
+		};
+
+		function load_logboard(){
+
+			//$interval(function(){call_load_logboard();},500);a
+			setTimeout(call_load_logboard(), 1000);
+		}
+		function call_load_logboard(){
+			$http.get('./getlogboard').then(function(response){
+				$scope.logboard = response.data;
+			});
+			return;
+		}
+
 
 	});
 
 
    angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
 	    load_total();
-		$interval(function(){ load_total();},2000); //Atualizar o total de nodes a cada 5 segundos.
+		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
 			function load_total(){
 				$http.get('./total').then(function(response){
 					$scope.total = response.data;
 			});
 	   };
    });
-   </script>
 
+   angular.module('qMonitor').controller('exibir-logboard', function($scope, $http,$interval) {
+		$interval(function(){ load_logboard();},3000); //Atualizar o total de nodes a cada 5 segundos.
+			function load_logboard(){
+				$http.get('./getlogboard').then(function(response){
+					$scope.logboard = response.data;
+			});
+	   };
+   });
 
-   <script>
    angular.module('qMonitor').controller('exibir-nodes', function($scope, $http, $interval) {
 	//carregar o nodes clientes
 	 load_clientes();
@@ -177,7 +195,7 @@ t
 	</div>
 
 	<div class='jumbotron logboard'>
-		<div ng-repeat='log in logarray track by $index '>
+		<div ng-repeat='log in logboard track by $index '>
 			{{log}}
 		</div>
 	</div>
