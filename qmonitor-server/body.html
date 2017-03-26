@@ -53,7 +53,7 @@ t
 	<script> 
 
 	angular.module("qMonitor", []);
-	angular.module("qMonitor").controller("unbound",function($scope,$http,$interval){
+	angular.module("qMonitor").controller("unbound",function($scope,$http,$interval,$timeout){
 		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
 
 		// TITULO E VERSAO DO PROGRAMA #############
@@ -84,7 +84,11 @@ t
 		function load_logboard(){
 
 			//$interval(function(){call_load_logboard();},500);a
-			setTimeout(call_load_logboard(), 1000);
+//			setTimeout(call_load_logboard(), 1500);
+		 filterTextTimeout = $timeout(function() {
+        	call_load_logboard();
+		}, 500); // delay 250 ms
+
 		}
 		function call_load_logboard(){
 			$http.get('./getlogboard').then(function(response){
