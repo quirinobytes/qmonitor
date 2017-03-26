@@ -22,7 +22,7 @@ var aliveNodes = [];
 var active_nodes = [];
 //var death_nodes = [];
 var logboard = [];
-var transationLogId = 0;
+var transact_log_id = 0 ;
 var argv = require('yargs')
    .usage('Usage: $0 -v [str] -d [str]')
    .demandOption(['v','d','s'])
@@ -42,7 +42,6 @@ console.log(" Debug = "+debug);
 console.log(" Verbose = "+verbose);
 console.log("Server= "+qmonitorserverip);
 console.log("Port = "+port);
-
 
 
 //Zerando o arquivo de nodes/// Parece que isso nao sera mais necessário, tentar excluir na proxima versão.
@@ -67,20 +66,19 @@ app.get ('/listar' ,function (req,res) {
 
 //########################## LISTAR LOGS  ######################
 app.get ('/getlogboard' ,function (req,res) {
-		res.json(logboard);
+		res.json({logs:logboard});
 });
-
 
 //########################## GRAVAR LOGS  ######################
 app.post ('/setlogboard/', function (req,res) {
 	var hostname = req.body.hostname;
-	var logstr = req.body.logstr;
+	var logstring = req.body.logstring;
 	var time = req.body.time;
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	var log = {'hostname':hostname,'logstring':logstr,'time':time};
+	var log = {'hostname':hostname,'logstring':logstring,'time':time};
 	if (ip.substr(0, 7) == "::ffff:") {  ip = ip.substr(7)  }
 	if (verbose) {	console.log ("#VERBOSE# HELLO CLIENT: adding(" + ip+")");	}
-	if ( registerLog(log) ){  res.json({islogged:true});  }else {  res.json({islogged:false});  }
+	if ( registerInLogBoard(log) ){  res.json({islogged:true});  }else {  res.json({islogged:false});  }
 });
 
 app.get ('/total' ,function (req,res) {
@@ -88,17 +86,15 @@ app.get ('/total' ,function (req,res) {
 		res.end();
 		var ip = req.connection.remoteAddress;
 
-		if (ip.length < 15) 
-			{   
+		if (ip.length < 15){
 			    ip = ip;
-			}
-		else
-		{
+		}
+		else{
 		    var nyIP = ip.slice(7);
 		    ip = nyIP;
 		}
 
-if (debug) { console.log("#DEBUG# CLIENT ("+ip+") REQUEST API: /total | Resp => "+aliveNodes.length); }
+		if (debug) { console.log("#DEBUG# CLIENT ("+ip+") REQUEST API: /total | Resp => "+aliveNodes.length); }
 });
 
 
@@ -107,10 +103,9 @@ app.post ('/hello', function (req,res) {
 	var nome = req.body.nome;
 	var token = req.body.token;
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-		if (ip.substr(0, 7) == "::ffff:") {
-		  ip = ip.substr(7)
-		}
-
+	if (ip.substr(0, 7) == "::ffff:") {
+	  ip = ip.substr(7)
+	}
 	if (verbose) {	console.log ("#VERBOSE# HELLO CLIENT: adding(" + ip+")");	}
 	registerNode(ip);
 	res.json({cadastro:true});
@@ -168,11 +163,13 @@ function removeNodes(node){
 }
 
 //funcao que faz o registro de aliveNodes.
-function registerLogBoard(log){
-	var logdescarte;
-	if (logboard.lenght > 10){	logboard.pop(logdescarte);	}
+function registerInLogBoard(log){
+//	var logdescarte;
+	if (logboard.lenght > 10){	logboard.shift();	}
 	if (debug) console.log("logBoard.add:"+log);
 	logboard.push(log);
+	transact_log_id = transact_log_id + 1;
+	if (verbose) { console.log("#VERRBOSE# TransactionId++ => "+transact_log_id);  }
 	return true;
 }
 
