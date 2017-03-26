@@ -30,18 +30,21 @@ var argv = require('yargs')
    .alias('d', 'debug')
    .alias('s', 'server')
    .alias('p', 'port')
+   .alias('t', 'timeout')
    .default({v:false,d:false,s:false}).argv;
 
 //######################## SERVER #####################################
 
 if (argv.s) { qmonitorserverip = argv.s; }
 if (argv.p) { port = argv.p; }
+if (argv.t) { timeout = argv.t * 1000; }
 
 console.log("\n######  qMonitor Server ######\n");
 console.log(" Debug = "+debug);
 console.log(" Verbose = "+verbose);
 console.log("Server= "+qmonitorserverip);
 console.log("Port = "+port);
+console.log("Timeout = "+timeout);
 
 
 //Zerando o arquivo de nodes/// Parece que isso nao sera mais necessário, tentar excluir na proxima versão.
@@ -53,7 +56,7 @@ app.get ('/',function (req,res) {
 		console.log('%s',body.toString());
 		res.write(body);
 	res.end('</html>');
-	if (verbose) { console.log ("#VERBOSE# CLIENT (req.connection.remoteaddress) GET /") }; 
+	if (verbose) { console.log ("#VERBOSE# CLIENT ("+req.connection.remoteaddress+") GET /") }; 
 	});
 
 });
@@ -175,12 +178,13 @@ function registerInLogBoard(log){
 
 
 
+// O SERVER FICA EM LOOP INFINITO FAZENDO SATINIZING... 
 
-//executar o sanitize em loop de 5minutos.
+//executar o sanitize em loop de timeout ou  5minutos(app_config)
 setInterval(function () {
 	if (debug) console.log('Sanitizing....');
      sanitize();
-}, 20000);
+}, timeout);
 
 
 
