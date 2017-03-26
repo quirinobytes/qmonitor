@@ -43,7 +43,7 @@ if (argv.t) { global.timeout = argv.t*1000; }
 console.log("qMonitor client: Iniciado..... OK");
 console.log("Verbose = "+global.verbose);
 console.log("Debug = "+global.debug);
-console.log("Server= "+qmonitorserverip);
+console.log("Server = "+qmonitorserverip);
 console.log("Port = "+serverport);
 console.log("Timeout = "+timeout);
 
