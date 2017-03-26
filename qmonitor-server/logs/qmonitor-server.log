@@ -6226,3 +6226,23 @@
 [2017-03-26 15:32:00.754] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
 [2017-03-26 15:32:00.778] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
 [2017-03-26 15:32:00.826] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-26 15:38:23.666] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-26 15:38:23.679] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.102","192.168.200.1"]
+[2017-03-26 15:38:23.713] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-26 15:38:23.763] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-26 15:39:23.551] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-26 15:39:23.551] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.102","192.168.200.1"]
+[2017-03-26 15:39:23.585] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-26 15:39:23.624] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-26 15:43:52.596] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-26 15:43:52.596] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.102","192.168.200.1"]
+[2017-03-26 15:43:52.681] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-26 15:43:52.718] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-26 15:44:15.078] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-26 15:44:15.078] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.102","192.168.200.1"]
+[2017-03-26 15:44:15.140] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-26 15:44:15.149] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-26 15:51:37.581] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-26 15:51:37.582] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-26 15:51:37.656] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-26 15:51:37.662] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
