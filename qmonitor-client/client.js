@@ -8,7 +8,7 @@ var sys = require('util');
 var exec = require('child_process').exec;
 var fs = require('fs');
 var connection_error_count = 0;
-
+var colors = require('colors');
 
 //###############
 //#             #
@@ -40,12 +40,17 @@ if (argv.t) { global.timeout = argv.t*1000; }
 
 
 //Iniciando o client
-console.log("qMonitor client: Iniciado..... OK");
-console.log("Verbose = "+global.verbose);
-console.log("Debug = "+global.debug);
-console.log("Server = "+qmonitorserverip);
-console.log("Port = "+serverport);
-console.log("Timeout = "+timeout);
+console.log("Iniciando: qMonitor client.... "+ "OK".green);
+
+console.log("Config Variables { ");
+console.log("\tVerbose......"+global.verbose);
+console.log("\tDebug........"+global.debug);
+console.log("\tServer......."+qmonitorserverip);
+console.log("\tPort........."+serverport);
+console.log("\tTimeout......"+timeout);
+console.log("\tMy Hostname.."+os.hostname().green);
+console.log("}");
+console.log("Status: ................. "+"running".green);
 
 
 //	API  //
