@@ -36,6 +36,7 @@
 			font-size:small;
 		}		
 		.table{ 
+t
 			margin-top:20px;
 			background-color: light-blue;
 		}
@@ -46,7 +47,7 @@
 						background-color: #55AAFF;
 		}
 	</style>
-	<title> qMonitor </title>
+	<title> Unbound Admin Portal </title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script> 
@@ -54,16 +55,17 @@
 
 	angular.module("qMonitor", []);
 	angular.module("qMonitor").controller("unbound",function($scope,$http){
-	angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';});
+//	angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
 
 	// TITULO E VERSAO DO PROGRAMA #############
 	//DECLARACAO DE VARIAVEIS
-	$scope.titulo = "qMonitor - unBound Commander ® v1.0"
+	$scope.titulo = "Unbound Admin's Portal - v1.0"
 	$scope.data='01/01/2017';
 	$scope.cotacoes_array = [];
 	$scope.eEditable = -1;	
 	$scope.logarray = [];
-		
+
+	// FUNCAO flushzone( recebe um obj nome de dominio )		
 	$scope.flushzone = function(obj){
 		console.log("Executando flushzone("+obj+")");
 		console.log("FQDN = "+obj);
@@ -144,7 +146,6 @@
 				</table>
 			</div>
 
-			{{retornoComandos}}
 
 			<div class='quadro'>
 			   <h4> Painel de comandos - unbound </h4>
@@ -169,6 +170,9 @@
 					</td>
 				</tr>
 				</table>
+
+			{{retornoComandos}}
+
 			</div>
 	</div>
 

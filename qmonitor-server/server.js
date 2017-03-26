@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-
-//#################################################################################################################
-// qMonitor - unbound Commander
-// @author Rafael Castro
-// @date 2017-03-24 
-//#################################################################################################################
+//######################################################################
+//                                                                     #  
+//  qMonitor - unbound Commander                                       #
+//  @author Rafael Castro                                              #
+//  @date 2017-03-24                                                   #
+//                                                                     # 
+//###################################################################### 
 
 
 var app = require('./config/app_config');
@@ -14,20 +15,24 @@ var productController = require('./controllers/productController');
 var os = require("os");
 var request = require('request');
 var fs= require('fs');
-var nodesFile= 'nodes.txt';
+//var nodesFile= 'nodes.txt';
 var body="";
 var txt;
+var aliveNodes = [];
+var active_nodes = [];
+//var death_nodes = [];
+var logboard = [];
+var transationLogId = 0;
 var argv = require('yargs')
-    .usage('Usage: $0 -v [str] -d [str]')
-    .demandOption(['v','d','s'])
-    .alias('v', 'verbose')
-    .alias('d', 'debug')
-    .alias('s', 'server')
-    .alias('p', 'port')
-    .default({v:false,d:false,s:false})
-    .argv;
+   .usage('Usage: $0 -v [str] -d [str]')
+   .demandOption(['v','d','s'])
+   .alias('v', 'verbose')
+   .alias('d', 'debug')
+   .alias('s', 'server')
+   .alias('p', 'port')
+   .default({v:false,d:false,s:false}).argv;
 
-//########################################################## SERVER ################################################
+//######################## SERVER #####################################
 
 if (argv.s) { qmonitorserverip = argv.s; }
 if (argv.p) { port = argv.p; }
@@ -41,13 +46,7 @@ console.log("Port = "+port);
 
 
 //Zerando o arquivo de nodes/// Parece que isso nao sera mais necessário, tentar excluir na proxima versão.
-fs.writeFile(nodesFile,'');
-
-
-var aliveNodes = [];
-var active_nodes = [];
-var death_nodes = [];
-
+//fs.writeFile(nodesFile,'');
 
 //############################ HOME PAGE ######################
 app.get ('/',function (req,res) {
@@ -55,12 +54,33 @@ app.get ('/',function (req,res) {
 		console.log('%s',body.toString());
 		res.write(body);
 	res.end('</html>');
+	if (verbose) { console.log ("#VERBOSE# CLIENT (req.connection.remoteaddress) GET /") }; 
 	});
+
 });
 
-//####################################### LISTAR NODES ###############
+//########################## LISTAR NODES ######################
 app.get ('/listar' ,function (req,res) {
 		res.json({servidores:aliveNodes});
+});
+
+
+//########################## LISTAR LOGS  ######################
+app.get ('/getlogboard' ,function (req,res) {
+		res.json(logboard);
+});
+
+
+//########################## GRAVAR LOGS  ######################
+app.post ('/setlogboard/', function (req,res) {
+	var hostname = req.body.hostname;
+	var logstr = req.body.logstr;
+	var time = req.body.time;
+	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	var log = {'hostname':hostname,'logstring':logstr,'time':time};
+	if (ip.substr(0, 7) == "::ffff:") {  ip = ip.substr(7)  }
+	if (verbose) {	console.log ("#VERBOSE# HELLO CLIENT: adding(" + ip+")");	}
+	if ( registerLog(log) ){  res.json({islogged:true});  }else {  res.json({islogged:false});  }
 });
 
 app.get ('/total' ,function (req,res) {
@@ -103,19 +123,18 @@ app.get ('/api/:nome/:parametro', function(req,res){
 	var i;
 
 	// NAO ESQUECER DE TRATAR AS FUNCOES POSSIVEIS... SENAO MANDA TUDO
-
 	logger.info('Comando enviado: %s',metodo);
 	logger.info('Enviando a chamada para os nos '+ JSON.stringify(aliveNodes));
-
+	global.counttotalresponses = aliveNodes.lenght;
 	for (i = 0 ; i < aliveNodes.length ; i++){
 		url = 'http://'+aliveNodes[i]+':8080'+'/'+metodo+'/'+parametro;
 		console.log("URL="+url);
 		request(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					//devolvendo o retorno
-					res.write(response.body);
-					res.end();
-				    logger.info("COMMAND Executed OK => %s ",response.request.host) // Show the HTML for the Google homepage.
+
+					//devolvendo o retorno do retorno, AHAA!
+					//res.write(response.body);
+				    logger.info("#COMMAND_OK# Executed OK => %s ", response.request.host);
 					if (verbose) { console.log(body); }
 						//console.log(body.toString());
 						//console.log(JSON.stringify(body, null, 3));
@@ -129,8 +148,7 @@ app.get ('/api/:nome/:parametro', function(req,res){
 		})
 
 	}
-
-
+					res.end();
 });
 
 //funcao que faz o registro de aliveNodes.
@@ -148,6 +166,17 @@ function removeNodes(node){
 		if (debug) console.log("AliveNodes.del:"+node); 
 	}
 }
+
+//funcao que faz o registro de aliveNodes.
+function registerLogBoard(log){
+	var logdescarte;
+	if (logboard.lenght > 10){	logboard.pop(logdescarte);	}
+	if (debug) console.log("logBoard.add:"+log);
+	logboard.push(log);
+	return true;
+}
+
+
 
 
 //executar o sanitize em loop de 5minutos.
