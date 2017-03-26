@@ -40,10 +40,11 @@ if (argv.p) { port = argv.p; }
 if (argv.t) { timeout = argv.t * 1000; }
 
 console.log("\n######  qMonitor Server ######\n");
-console.log(" Debug = "+debug);
-console.log(" Verbose = "+verbose);
-console.log("Server= "+qmonitorserverip);
-console.log("Port = "+port);
+console.log("\nqMonitor server: Iniciado..... OK");
+console.log("Debug = "+debug);
+console.log("Verbose = "+verbose);
+console.log("Server IP = "+qmonitorserverip+" ("+os.hostname()+")");
+console.log("Server Port = "+port);
 console.log("Timeout = "+timeout);
 
 
