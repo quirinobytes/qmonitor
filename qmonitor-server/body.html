@@ -36,7 +36,6 @@
 			font-size:small;
 		}		
 		.table{ 
-t
 			margin-top:20px;
 			background-color: light-blue;
 		}
@@ -47,12 +46,25 @@ t
 						background-color: #55AAFF;
 		}
 	</style>
-	<title> Unbound Admin Portal </title>
+	<title> Unbound Admin </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script> 
 
-	angular.module("qMonitor", []);
+	app = angular.module("qMonitor", []);
+	app.factory('TotalFactory', function() {
+      return total;
+	  function total(){
+	    load_total();
+		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
+			function load_total(){
+				$http.get('./total').then(function(response){
+					$scope.total = response.data;
+			});
+	   };
+       } 
+	});
+
 	angular.module("qMonitor").controller("unbound",function($scope,$http,$interval,$timeout){
 		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
 
@@ -98,22 +110,22 @@ t
 			});
 		}
 
+
+		//chamando a load_transact_log_id logo que carregar a pagina.
 		load_transact_log_id();
-
-
+		call_load_logboard();
 	});
 
 
    angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
 	    load_total();
-
 		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
 			function load_total(){
 				$http.get('./total').then(function(response){
 					$scope.total = response.data;
 			});
 	   };
-   });
+   }); 
 
    angular.module('qMonitor').controller('exibir-logboard', function($scope, $http,$interval) {
 		$interval(function(){ load_logboard();},3000); //Atualizar o total de nodes a cada 5 segundos.
@@ -151,7 +163,6 @@ t
 <body ng-controller="unbound">
 	<div class="jumbotron jumbotron-fluid" >
 			<h3> {{titulo}} </h3>
-			<button class="btn btn-success btn-block" ng-click="robo()"> Ativar Teste de Hello </button>
 			<div class='container'> 
 				<table magin-left='100px' class='table' ng-controller="exibir-total">
 						<td> Total de servidores {{total}} </td>
@@ -162,7 +173,7 @@ t
 	
 
 			<div class='cotacoes container' ng-controller='exibir-nodes'>
-			<h4> Servidores de Unbound Conectados</h4>
+			<h4> Avaiable Servers</h4>
 				<table class='table table-striped' ng-controller='exibir-nodes'>
 				<tr>
 				</tr>
@@ -174,9 +185,9 @@ t
 
 
 			<div class='quadro'>
-			   <h4> Painel de comandos - unbound </h4>
+			   <h4> Command Pannel</h4>
 						<hr>
-			   <table class='table'>
+			   <table class='comandos'>
 				<tr>
 					<td align='center'> <form name='fqdn' action=''>
 						<!-- <input type="text" style="width: 300px;" value="{{ papel.valor }}" ng-model='papel.valor' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/>  -->
@@ -193,6 +204,7 @@ t
 		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar A </button>
 		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar AAAA </button>
 		        	<button type="submit" ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
+					<button class="btn btn-xs btn-success" ng-click="robo()"> Ativar Teste de Hello </button>
 					</td>
 				</tr>
 				</table>
@@ -203,6 +215,7 @@ t
 	</div>
 
 	<div class='jumbotron logboard'>
+		<h4> Log Board</h4>
 		<div ng-repeat='log in logboard track by $index '>
 			{{log}}
 		</div>
