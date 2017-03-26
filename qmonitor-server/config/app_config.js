@@ -2,6 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var conf = require("./config.js");
 var log4js = require('log4js');
+// #### VARIAVEIS GLOBAIS
+global.qmonitorserverip = '189.55.194.115' ;
+global.port = 8080;
+//setting timeout to 20 seconds
+timeout = 20000;
 
 log4js.configure({
 appenders: [
@@ -30,10 +35,6 @@ if (argv.v){ global.verbose = true; }
 else{ global.verbose = false;}
 
 
-
-// #### VARIAVEIS GLOBAIS
-global.qmonitorserverip = '189.55.194.115' ;
-global.port = 8080;
 
 var app = module.exports = express();
 
