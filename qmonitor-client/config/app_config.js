@@ -12,11 +12,7 @@ timeout=20000;
 
 
 var app = module.exports = express();
-
-
 console.log("\n######  qMonitor Client ######\n");
-
-
 
 //Abrindo a porta da aplicação Client
 app.listen(port);
