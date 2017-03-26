@@ -76,7 +76,8 @@ app.get ('/flushzone/:fqdn' ,function (req,res) {
 		}
 		res.write(os.hostname()+': '+stdout);
 		res.end();
-		var log = {hostame:os.hostname(),logstring:stdout,time:date()};
+		datetime = new Date();
+		var log = {hostname:os.hostname(),logstring:stdout,time:datetime};
 		envialog(log);
 	});
 
@@ -147,8 +148,8 @@ function hello () {
 
     req = request(options, function (error, response, body) {
        // if(error) throw new Error('Falha na conexão com o servidor')
-       str_erro = "Erro ao conectar no "+qmonitorserverip+" Porta:"+serverport;
-	datetime = new Date();
+       	str_erro = "Erro ao conectar no "+qmonitorserverip+" Porta:"+serverport;
+		datetime = new Date();
         if (error) {
 	//	console.log(erro);
 		if (connection_error_count >= 3){
