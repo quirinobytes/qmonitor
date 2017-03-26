@@ -2,12 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 // #### VARIAVEIS GLOBAIS
-global.qmonitorserverip = '172.23.2.134' ;
-global.qmonitorserverip = 'a3-zico1' ;
+global.qmonitorserverip = 'dev1' ;
 global.port = 8080;
 serverport = 8080;
 logfile='/var/log/qmonitor.log';
-timeout=3000;
+
+//setting timeout 20s
+timeout=20000;
 
 
 var app = module.exports = express();
