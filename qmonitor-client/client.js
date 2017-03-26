@@ -34,16 +34,9 @@ if (argv.d) { global.debug = true; }
 else { global.debug = false; }
 if (argv.v) { global.verbose = true; }
 else { global.verbose = false ; }
-if (argv.s) { server = argv.s; }
-else {global.server = false};
-if (argv.p) { global.port = argv.p; }
-else {global.port = false};
+if (argv.s) { qmonitorserverip = argv.s; }
+if (argv.p) { serverport = argv.p; }
 if (argv.t) { global.timeout = argv.t*1000; }
-else {global.timeout = false};
-
-
-if (server) { qmonitorserverip = global.server }
-if (port) { serverport = global.port }
 
 
 //Iniciando o client
@@ -52,6 +45,7 @@ console.log("Verbose = "+global.verbose);
 console.log("Debug = "+global.debug);
 console.log("Server= "+qmonitorserverip);
 console.log("Port = "+serverport);
+console.log("Timeout = "+timeout);
 
 
 //	API  //
