@@ -104,6 +104,13 @@ app.get ('/total' ,function (req,res) {
 		if (debug) { console.log("#DEBUG# CLIENT ("+ip+") REQUEST API: /total | Resp => "+aliveNodes.length); }
 });
 
+app.get ('/gettransactionid' ,function (req,res) {
+		res.write(""+transact_log_id);
+		res.end();
+});
+
+
+
 
 
 app.post ('/hello', function (req,res) {

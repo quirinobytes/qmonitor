@@ -82,20 +82,23 @@ t
 		};
 
 		function load_logboard(){
-
-			//$interval(function(){call_load_logboard();},500);a
-//			setTimeout(call_load_logboard(), 1500);
-		 filterTextTimeout = $timeout(function() {
-        	call_load_logboard();
-		}, 500); // delay 250 ms
-
+			 filterTextTimeout = $timeout(function() {
+    		    	call_load_logboard();
+					load_transact_log_id();
+				}, 500); // delay 250 ms
 		}
 		function call_load_logboard(){
 			$http.get('./getlogboard').then(function(response){
 				$scope.logboard = response.data;
 			});
-			return;
 		}
+		function load_transact_log_id(){
+			$http.get('./gettransactionid').then(function(response){
+				$scope.transact_log_id = response.data;
+			});
+		}
+
+		load_transact_log_id();
 
 
 	});
@@ -103,6 +106,7 @@ t
 
    angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
 	    load_total();
+
 		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
 			function load_total(){
 				$http.get('./total').then(function(response){
@@ -151,7 +155,7 @@ t
 			<div class='container'> 
 				<table magin-left='100px' class='table' ng-controller="exibir-total">
 						<td> Total de servidores {{total}} </td>
-					  	<td><span style='font-weight:bold;'> Tempo = {{tempo | date:'R$':2}} </span></td>
+					  	<td><span style='font-weight:bold;'> TransactionID = {{transact_log_id}} </span></td>
 					</tr>
 				</table>
 			</div>
