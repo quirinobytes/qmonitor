@@ -46,6 +46,7 @@ console.log("Debug = "+global.debug);
 console.log("Server = "+qmonitorserverip);
 console.log("Port = "+serverport);
 console.log("Timeout = "+timeout);
+console.log("My Hostname = "+os.hostname());
 
 
 //	API  //
