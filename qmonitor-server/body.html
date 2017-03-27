@@ -42,6 +42,9 @@
 		.form-control{
 			margin-bottom: 4px;
 		}
+		.comandos{
+			text-align:center;
+		}
 		.selecionado{
 						background-color: #55AAFF;
 		}
@@ -157,11 +160,12 @@
 
 <body ng-controller="unbound">
 	<div class="jumbotron jumbotron-fluid" >
-			<h2> <img src="http://www.novumnet.com.br/wp-content/uploads/2014/12/uol.png" height="45" width="45">&nbsp; &nbsp; Unbound Remote Admin &nbsp; &nbsp; &nbsp; </h2>
+			<h2> <img src="http://www.novumnet.com.br/wp-content/uploads/2014/12/uol.png" height="45" width="45">&nbsp; &nbsp; Unbound Remote Admin &nbsp; &nbsp; &nbsp; </h2><h5 align='right'> vers&atilde;o 1.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </h5>
 			<div class='container'> 
 				<table magin-left='100px' class='table' ng-controller="exibir-total">
-						<td> Total Servers: {{total}} </td>
-					  	<td align='right'>TransactionID: {{transact_log_id}} </span></td>
+						<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Unbound Servers Online: {{total}} </td>
+						<td>|</td>
+					  	<td align='right'>TransactionID: {{transact_log_id}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  </span></td>
 					</tr>
 				</table>
 			</div>
@@ -184,36 +188,34 @@
 						<hr>
 			   <table class='table comandos'>
 				<tr>
-					<td align='center'>
+					<td>
 						<!-- <input type="text" style="width: 300px;" value="{{ papel.valor }}" ng-model='papel.valor' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/>  -->
-					FQDN <input type="text" name="input" ng-model="parametro.fqdn"  required ng-trim="true">  
-					&nbsp; &nbsp; Query Type <select>
-						
-						<option value=""></option>
-						<option value="ipv4">A</option>
-						<option value="ipv6">AAAA</option>
-						<option value="mx">MX</option>
-						<option value="ns">NS</option>
-						<option value="txt">TXT</option>
-					</select>
-
+						FQDN <input type="text" name="input" ng-model="parametro.fqdn"  required ng-trim="true">  &nbsp; &nbsp; Query Type
+						<select>
+							<option value=""></option>
+							<option value="ipv4">A</option>
+							<option value="ipv6">AAAA</option>
+							<option value="mx">MX</option>
+							<option value="ns">NS</option>
+							<option value="txt">TXT</option>
+						</select>
 					</td>
 				</tr>
-				<tr>
-					<td>
+				<tr> <td>&nbsp;</td> </tr>
+				<tr> <td >
 		        	<button type='submit' class="btn btn-danger btn-xs" ng-click="flushzone(parametro.fqdn)"  ng-disabled="! parametro.fqdn"> Flush Zone </button>
 					<button class="btn btn-primary btn-xs disabled " ng-click="flushhost(papel.valor)"> Clean Host </button>
 		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar MX </button>
 		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar NS </button>
 		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar A </button>
 		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar AAAA </button>
-		        						</td>
+		        	</td>
 				</tr>
 				<tr> <td>
 					<button ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
 					<button class="btn btn-xs btn-success" ng-click="robo()"> Ativar Teste de Hello </button>
 		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-warning disabled"> Clean Log Board </button>
-					</td>
+			    	</td>
 				</tr>
 				</table>
 
