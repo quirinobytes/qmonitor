@@ -183,10 +183,19 @@
 						<hr>
 			   <table class='table comandos'>
 				<tr>
-					<td align='center'> <form name='fqdn' action=''>
+					<td align='center'>
 						<!-- <input type="text" style="width: 300px;" value="{{ papel.valor }}" ng-model='papel.valor' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/>  -->
-					FQDN:	<input type="text" name="input" ng-model="parametro.fqdn"  required ng-trim="true">  
-					&nbsp; &nbsp; TIPO:	<input width='5px' type="text" ng-model="parametro.tipo"  required ng-trim="true"> </form>
+					FQDN <input type="text" name="input" ng-model="parametro.fqdn"  required ng-trim="true">  
+					&nbsp; &nbsp; Query Type <select>
+						
+						<option value=""></option>
+						<option value="ipv4">A</option>
+						<option value="ipv6">AAAA</option>
+						<option value="mx">MX</option>
+						<option value="ns">NS</option>
+						<option value="txt">TXT</option>
+					</select>
+
 					</td>
 				</tr>
 				<tr>
