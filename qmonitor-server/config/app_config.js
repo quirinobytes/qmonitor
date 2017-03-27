@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var conf = require("./config.js");
 var log4js = require('log4js');
 // #### VARIAVEIS GLOBAIS
-global.qmonitorserverip = '189.55.194.115' ;
+global.qmonitorserverip = '0.0.0.0' ;
 global.port = 8080;
 //setting timeout to 20 seconds
 timeout = 20000;

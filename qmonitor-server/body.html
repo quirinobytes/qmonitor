@@ -201,17 +201,18 @@
 				</tr>
 				<tr>
 					<td>
-		        	<button class="btn btn-danger btn-xs" ng-click="flushzone(parametro.fqdn)"  ng-disabled="! parametro.fqdn"> Flush Zone </button>
+		        	<button type='submit' class="btn btn-danger btn-xs" ng-click="flushzone(parametro.fqdn)"  ng-disabled="! parametro.fqdn"> Flush Zone </button>
 					<button class="btn btn-primary btn-xs disabled " ng-click="flushhost(papel.valor)"> Clean Host </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar MX </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar NS </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar A </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar AAAA </button>
+		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar MX </button>
+		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar NS </button>
+		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar A </button>
+		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar AAAA </button>
 		        						</td>
 				</tr>
 				<tr> <td>
-					<button type="submit" ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
+					<button ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
 					<button class="btn btn-xs btn-success" ng-click="robo()"> Ativar Teste de Hello </button>
+		        	<button ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-warning disabled"> Clean Log Board </button>
 					</td>
 				</tr>
 				</table>

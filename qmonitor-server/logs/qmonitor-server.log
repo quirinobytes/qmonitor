@@ -8899,3 +8899,71 @@
 [2017-03-26 23:48:39.776] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
 [2017-03-26 23:48:39.838] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
 [2017-03-26 23:48:39.845] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:56:52.230] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:56:52.239] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:56:52.318] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:56:52.336] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:56:58.447] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:56:58.448] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:56:58.511] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:56:58.520] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:57:07.288] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:57:07.288] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:57:07.306] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:57:07.308] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:57:15.739] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:57:15.741] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:57:15.760] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:57:15.763] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:57:48.181] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:57:48.182] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:57:48.201] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:57:48.202] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:57:56.342] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:57:56.343] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:57:56.406] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:57:56.413] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:05.884] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:05.884] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:05.901] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:05.907] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:12.948] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:12.949] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:12.966] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:12.972] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:29.910] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:29.911] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:29.973] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:29.980] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:41.331] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:41.331] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:41.403] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:41.663] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:46.943] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:46.943] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:47.007] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:47.014] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:53.751] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:53.752] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:53.817] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:53.823] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:58:59.685] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:58:59.685] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:58:59.752] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:58:59.760] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:59:13.097] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:59:13.097] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:59:13.161] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:59:13.168] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:59:53.016] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:59:53.016] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:59:53.080] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:59:53.088] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 00:59:58.500] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 00:59:58.500] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 00:59:58.522] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 00:59:58.523] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
+[2017-03-27 01:00:09.046] [INFO] qmonitor - Comando enviado: flushzone
+[2017-03-27 01:00:09.046] [INFO] qmonitor - Enviando a chamada para os nos ["192.168.200.1","192.168.200.102"]
+[2017-03-27 01:00:09.065] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.1 
+[2017-03-27 01:00:09.079] [INFO] qmonitor - #COMMAND_OK# Executed OK => 192.168.200.102 
