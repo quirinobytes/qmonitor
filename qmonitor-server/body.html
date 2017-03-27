@@ -52,18 +52,18 @@
 	<script> 
 
 	app = angular.module("qMonitor", []);
-	app.factory('TotalFactory', function() {
+/*	app.factory('TotalFactory', function() {
       return total;
 	  function total(){
 	    load_total();
-		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
+		$interval(function(){ load_total();},5000); //Atualizar o total de nodes a cada 5 segundos.
 			function load_total(){
 				$http.get('./total').then(function(response){
 					$scope.total = response.data;
 			});
 	   };
        } 
-	});
+	}); */
 
 	angular.module("qMonitor").controller("unbound",function($scope,$http,$interval,$timeout){
 		angular.module("qMonitor").run(function(editableOptions) {  editableOptions.theme = 'bs3';  } );
@@ -73,6 +73,7 @@
 		$scope.cotacoes_array = [];
 		$scope.eEditable = -1;	
 		$scope.logarray = [];
+		$scope.totalserverindex = 0;
 
 		// FUNCAO flushzone( recebe um obj nome de dominio )		
 		$scope.flushzone = function(obj){
@@ -117,7 +118,7 @@
 
    angular.module('qMonitor').controller('exibir-total', function($scope, $http,$interval) {
 	    load_total();
-		$interval(function(){ load_total();},3000); //Atualizar o total de nodes a cada 5 segundos.
+		$interval(function(){ load_total();},5000); //Atualizar o total de nodes a cada 5 segundos.
 			function load_total(){
 				$http.get('./total').then(function(response){
 					$scope.total = response.data;
