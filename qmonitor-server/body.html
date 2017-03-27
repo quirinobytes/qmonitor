@@ -9,7 +9,7 @@
 			text-align: center;
 			padding: 10px;
 		}
-		.painel{
+		.painel{ //painel principal
 		    background:#dddddc;
 			border-size:1px;
 			border-style:solid;
@@ -18,18 +18,18 @@
 			margin-left:230px;
 		}		
 
-		.logboard{
+		.logboard{ 
+			display:none; //make invible on load css
 			margin-right:20px;
 			border-size:1px;
 			border-style:solid;
 			border-color:black;;
-			width: 300px;
+			width: 350px;
 			height: 500px;
 		    background:#dddddc;
 			position: absolute;
 		    top: 20;
-			display:none;
-		    right: 30;
+		    right: 50;
 //			float: right;
 		    overflow: auto;
 			overflow-x: hidden;
@@ -105,8 +105,8 @@
 			var b = document.getElementById('showhidelogboard');
 			var x = document.getElementById('logboard');
 			    if (x.style.display === 'none') {
-		        x.style.display = 'block';
-				b.textContent = 'Hide Log Board';
+		        	x.style.display = 'block';
+					b.textContent = 'Hide Log Board';
 			    } else {
 		        x.style.display = 'none';
 				b.textContent = 'Show Log Board';
