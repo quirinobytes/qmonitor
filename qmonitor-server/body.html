@@ -28,6 +28,7 @@
 		    background:#dddddc;
 			position: absolute;
 		    top: 20;
+			display:none;
 		    right: 30;
 //			float: right;
 		    overflow: auto;
@@ -100,11 +101,15 @@
 
 		$scope.tooglelogboard = function(){
 			console.log("Executando ToogleLogBoard");
+			
+			var b = document.getElementById('showhidelogboard');
 			var x = document.getElementById('logboard');
 			    if (x.style.display === 'none') {
 		        x.style.display = 'block';
+				b.textContent = 'Hide Log Board';
 			    } else {
 		        x.style.display = 'none';
+				b.textContent = 'Show Log Board';
 			    }
 		};
 
@@ -197,7 +202,7 @@
 
 
 			<div class='quadro'>
-			   <h4> Command Pannel &nbsp; &nbsp; &nbsp;  <button type="btn btn-default"  id="{{name}}" name="favorite" ng-click='tooglelogboard()'> LogBoard </button></h4> </td>
+			   <h4> Command Pannel &nbsp; &nbsp; &nbsp;  <button type="btn btn-default"  id="showhidelogboard" name="favorite" ng-click='tooglelogboard()'> Show Log Board </button></h4> </td>
 						<hr>
 			   <table class='table comandos'>
 				<tr>
@@ -236,7 +241,7 @@
 
 			</div>
 	</div>
-	<div id='logboa	rd' class='logboard'> <br>
+	<div id='logboard' class='logboard'> <br>
 	<h4 align='center'> Log Board </h4>
 		<table class="table table-striped table-condensed table-responsive">
 		<tr>  <th>Time</th>  <th>Host</th> <th>Satus</th> </tr>
