@@ -70,8 +70,6 @@
 
 		// TITULO E VERSAO DO PROGRAMA #############
 		//DECLARACAO DE VARIAVEIS
-		$scope.titulo = "Unbound Admin's Portal - v1.0"
-		$scope.data='01/01/2017';
 		$scope.cotacoes_array = [];
 		$scope.eEditable = -1;	
 		$scope.logarray = [];
@@ -158,7 +156,7 @@
 
 <body ng-controller="unbound">
 	<div class="jumbotron jumbotron-fluid" >
-			<h3> {{titulo}} </h3>
+			<h2> <img src="http://www.novumnet.com.br/wp-content/uploads/2014/12/uol.png" height="45" width="45">&nbsp; &nbsp; Unbound Remote Admin &nbsp; &nbsp; &nbsp; </h2>
 			<div class='container'> 
 				<table magin-left='100px' class='table' ng-controller="exibir-total">
 						<td> Total de servidores {{total}} </td>
@@ -170,7 +168,7 @@
 
 			<div class='cotacoes container' ng-controller='exibir-nodes'>
 			<h4> Avaiable Servers</h4>
-				<table class='table table-striped' ng-controller='exibir-nodes'>
+				<table class='table' ng-controller='exibir-nodes'>
 				<tr>
 				</tr>
 				<tr ng-repeat="item in nodes_array.servidores">
@@ -183,7 +181,7 @@
 			<div class='quadro'>
 			   <h4> Command Pannel</h4>
 						<hr>
-			   <table class='comandos'>
+			   <table class='table comandos'>
 				<tr>
 					<td align='center'> <form name='fqdn' action=''>
 						<!-- <input type="text" style="width: 300px;" value="{{ papel.valor }}" ng-model='papel.valor' ng-readonly='!($papel == eEditable)' ng-dblclick="eEditable = $papel ; "/>  -->
@@ -202,7 +200,6 @@
 		        						</td>
 				</tr>
 				<tr> <td>
-					<br>
 					<button type="submit" ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
 					<button class="btn btn-xs btn-success" ng-click="robo()"> Ativar Teste de Hello </button>
 
@@ -216,8 +213,8 @@
 	</div>
 
 	<div class='logboard'>
-		<h4 align='center'> Log Board</h4>
-		<table class="table table-striped">
+		<h4 align='center'> Log Board </h4>
+		<table class="table table-striped table-condensed">
 		<tr>  <th>Time</th>  <th>Host</th> <th>Satus</th> </tr>
 		<tr ng-repeat='log in logboard.logs track by $index '>
 			<td> {{log.time | date :  "dd/MM H:mm" }} </td>	<td> {{log.hostname}} </td>	<td> {{log.logstring}} </td>
