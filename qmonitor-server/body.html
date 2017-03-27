@@ -19,17 +19,17 @@
 		}		
 
 		.logboard{
-			margin-top:20px;
 			margin-right:20px;
 			border-size:1px;
-			width: 250px;
+			width: 300px;
 			height: 500px;
 		    background:#dddddc;
 			position: absolute;
 		    top: 20;
-		    right: 40;
+		    right: 10;
 			float: right;
-		    overflow: scroll;
+		    overflow: auto;
+			overflow-x: hidden;
 		}
 
 		.cotacoes{
@@ -203,8 +203,13 @@
 		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar NS </button>
 		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar A </button>
 		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar AAAA </button>
-		        	<button type="submit" ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
+		        						</td>
+				</tr>
+				<tr> <td>
+					<br>
+					<button type="submit" ng-click="dumpcache()" class="btn btn-xs btn-success"> Dump Cache </button>
 					<button class="btn btn-xs btn-success" ng-click="robo()"> Ativar Teste de Hello </button>
+
 					</td>
 				</tr>
 				</table>
@@ -214,11 +219,14 @@
 			</div>
 	</div>
 
-	<div class='jumbotron logboard'>
-		<h4> Log Board</h4>
-		<div ng-repeat='log in logboard track by $index '>
-			{{log}}
-		</div>
+	<div class='logboard'>
+		<h4 align='center'> Log Board</h4>
+		<table class="table table-striped">
+		<tr>  <th>Time</th>  <th>Host</th> <th>Satus</th> </tr>
+		<tr ng-repeat='log in logboard.logs track by $index '>
+			<td> {{log.time | date :  "dd/MM H:mm" }} </td>	<td> {{log.hostname}} </td>	<td> {{log.logstring}} </td>
+		</tr>
+		</table>
 	</div>
 
     <br>

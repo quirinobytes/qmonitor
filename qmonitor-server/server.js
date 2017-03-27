@@ -109,10 +109,6 @@ app.get ('/gettransactionid' ,function (req,res) {
 		res.end();
 });
 
-
-
-
-
 app.post ('/hello', function (req,res) {
 	var nome = req.body.nome;
 	var token = req.body.token;
@@ -173,7 +169,9 @@ function removeNodes(node){
 	if (aliveNodes.indexOf(node) >= 0){
 		aliveNodes.pop(node);
 		if (debug) console.log("AliveNodes.del:"+node); 
+		return true
 	}
+	return false;
 }
 
 //funcao que faz o registro de aliveNodes.
@@ -183,7 +181,7 @@ function registerInLogBoard(log){
 	if (debug) console.log("logBoard.add:"+log);
 	logboard.push(log);
 	transact_log_id = transact_log_id + 1;
-	if (verbose) { console.log("#VERRBOSE# TransactionId++ => "+transact_log_id);  }
+	if (verbose) { console.log("#VERBOSE# TransactionId = "+transact_log_id);  }
 	return true;
 }
 
@@ -230,7 +228,7 @@ options = { method: 'GET',
 
 				//error_times = numero de vezes que o node nao respondeu.
 				if (error_times >= 0){
-					removeNodes(node);
+					if (removeNodes(node)){ sanitize();	}
 					if (debug) console.log("Chamado remover para: "+node);
 					error_times = 0;
 				}
