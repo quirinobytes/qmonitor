@@ -73,7 +73,7 @@ app.get ('/listar' ,function (req,res) {
 
 //########################## LISTAR LOGS  ######################
 app.get ('/getlogboard' ,function (req,res) {
-		res.json({logs:logboard});
+		res.json({logs:logboard.reverse()});
 });
 
 //########################## GRAVAR LOGS  ######################
