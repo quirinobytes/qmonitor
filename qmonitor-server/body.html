@@ -159,8 +159,8 @@
 			<h2> <img src="http://www.novumnet.com.br/wp-content/uploads/2014/12/uol.png" height="45" width="45">&nbsp; &nbsp; Unbound Remote Admin &nbsp; &nbsp; &nbsp; </h2>
 			<div class='container'> 
 				<table magin-left='100px' class='table' ng-controller="exibir-total">
-						<td> Total de servidores {{total}} </td>
-					  	<td align='right'><span style='font-weight:bold;'> TransactionID = {{transact_log_id}} </span></td>
+						<td> Total Servers: {{total}} </td>
+					  	<td align='right'>TransactionID: {{transact_log_id}} </span></td>
 					</tr>
 				</table>
 			</div>
@@ -200,12 +200,12 @@
 				</tr>
 				<tr>
 					<td>
-		        	<button class="btn btn-danger btn-xs" ng-click="flushzone(parametro.fqdn)"  ng-disabled="! parametro.fqdn"> Limpar zona </button>
-					<button class="btn btn-primary btn-xs " ng-click="flushhost(papel.valor)"> Limpar hostname </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar MX </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar NS </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar A </button>
-		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary"> Limpar AAAA </button>
+		        	<button class="btn btn-danger btn-xs" ng-click="flushzone(parametro.fqdn)"  ng-disabled="! parametro.fqdn"> Flush Zone </button>
+					<button class="btn btn-primary btn-xs disabled " ng-click="flushhost(papel.valor)"> Clean Host </button>
+		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar MX </button>
+		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar NS </button>
+		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar A </button>
+		        	<button type="submit" ng-click="save()" ng-click="editarValor()" class="btn btn-xs btn-primary disabled"> Limpar AAAA </button>
 		        						</td>
 				</tr>
 				<tr> <td>
@@ -219,7 +219,7 @@
 
 			</div>
 	</div>
-	<div class='logboard'>
+	<div class='logboard'> <br>
 	<h4 align='center'> Log Board </h4>
 		<table class="table table-striped table-condensed table-responsive">
 		<tr>  <th>Time</th>  <th>Host</th> <th>Satus</th> </tr>
